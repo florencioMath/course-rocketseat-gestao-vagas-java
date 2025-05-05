@@ -1,7 +1,6 @@
 package com.florenciomath.gestao_vagas.modules.candidate.controllers;
 
 import com.florenciomath.gestao_vagas.modules.candidate.CandidateEntity;
-import com.florenciomath.gestao_vagas.modules.candidate.CandidateRepository;
 import com.florenciomath.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,12 +18,12 @@ public class CandidateController {
     private CreateCandidateUseCase createCandidateUseCase;
 
     @PostMapping("/")
-    public ResponseEntity<Object> create(@Valid  @RequestBody CandidateEntity candidateEntity) {
-       try {
-           var result =this.createCandidateUseCase.execute(candidateEntity);
-           return ResponseEntity.ok().body(result);
-       } catch (Exception e) {
+    public ResponseEntity<Object> create(@Valid @RequestBody CandidateEntity candidateEntity) {
+        try {
+            var result = this.createCandidateUseCase.execute(candidateEntity);
+            return ResponseEntity.ok().body(result);
+        } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
-       }
+        }
     }
 }

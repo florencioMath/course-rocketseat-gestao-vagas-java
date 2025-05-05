@@ -1,6 +1,5 @@
 package com.florenciomath.gestao_vagas.modules.company.repositories;
 
-import com.florenciomath.gestao_vagas.modules.candidate.CandidateEntity;
 import com.florenciomath.gestao_vagas.modules.company.entities.CompanyEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
